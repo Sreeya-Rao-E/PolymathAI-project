@@ -1,28 +1,5 @@
-# SIH
-(SIH26091 | Ministry of Social Justice and Empowerment - MoSJE): AI-Driven Hyper-Local Business Advisory and Financial Structuring Assistant for Rural Micro-Entrepreneurs
-## 📌 Problem Overview
-Rural micro-entrepreneurs (such as village artisans, street vendors, small-scale farmers, and self-help group members) often lack financial literacy, struggle to access formal credit, and do not know how to price products, manage cash flow, or leverage government subsidies.  The ministry needs an accessible, vernacular software assistant that provides:Hyper-Local Market & Pricing Advice: Recommending viable business activities, local demand trends, and competitive pricing based on the user's specific district/village.Financial Structuring & Planning: Helping the entrepreneur calculate input costs, forecast simple margins/cash flows, and structure small loan requirements.Credit & Scheme Matching: Automatically mapping the business profile to relevant government credit schemes (e.g., PM-MUDRA, PM-SVANidhi, Stand-Up India, or NSFDC/NBCFDC loans under MoSJE).
+# Content-Hybrid CTR Recommenders Transplanted to KuaiRec's Fully-Observed Interaction Matrix: DeepFM and Wide & Deep Against a Pure-CF and a Classical Baseline
+We take two recommenders that mix collaborative signal with categorical content features, DeepFM and Wide & Deep, plus a pure collaborative-filtering graph model with no content features at all, LightGCN, and a classical SVD baseline, and run all four on two datasets. The first is MovieLens-1M, where content-hybrid methods are normally tested. The second is KuaiRec, a fully-observed short-video interaction dataset that a targeted search found is almost never paired with content-hybrid framing even though it is widely cited on its own. We train DeepFM and Wide & Deep twice per dataset: once using the item's categorical content features (genres/tags on MovieLens, video-category tags on KuaiRec) and once with those features switched off, so we can see directly whether the content half of the hybrid is doing anything, with LightGCN and SVD as fixed content-free reference points. On KuaiRec we follow the dataset's own intended protocol: train on the sparse big interaction matrix and evaluate on the near-fully-observed small matrix, which removes the exposure bias that normally hides inside offline recommender evaluation. The question is whether the content-feature benefit these hybrids are known for on MovieLens survives, disappears, or reverses on a dataset the content-hybrid literature has not picked up yet.
+
 
 ---
-
-## 💡 Our Solution
-Provide a brief summary of how your project solves the problem statement. Highlight key features, innovative approaches, and practical impact.
-
-- **Feature 1:** Description of key feature.
-- **Feature 2:** Description of key feature.
-- **Feature 3:** Description of key feature.
-
----
-
-## 🛠️ Tech Stack
-
-| Category | Technology / Tools |
-| :--- | :--- |
-Frontend: Flutter / React Native (mobile-first) with a simple voice-driven UI (Speech-to-Text via Bhashini API or Whisper).
-Backend: Python (FastAPI / Django) or Node.js handling business logic and user profiling.
-AI/Advisory Engine: A RAG (Retrieval-Augmented Generation) pipeline indexing official government scheme guidelines and micro-business playbooks into a vector database (FAISS / ChromaDB).
-
----
-
-## 🏗️ System Architecture & Workflow
-Include an overview or diagram explanation of how your system components interact.
